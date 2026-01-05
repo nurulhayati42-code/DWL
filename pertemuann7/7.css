@@ -1,0 +1,920 @@
+:root{
+    --bg-color: #fcf4ec;
+    --text-color: #ffffff;
+    --navbar-bg: #D6A99D;
+    --link-color: darkslategray;
+    --link-hover: #C97C7C;
+    --hero-hover-color: #d6c7be;
+    --cta-bg: #d0b586;
+    --cta-hover-bg: #92793f;
+    --about-heading-color: #432323;
+    --about-text-color: #674f42;
+    --video-heading-color: #78a79a;
+    --video-text-color: #5c473d;
+    --hero-heading-color: #6bada8;
+    --hero-text-color: #737474;
+    --audio-title-color: #2f3d4c;
+    --audio-subtitle-color: #687f7e;
+    --audio-item-bg: #86B0BD;
+    --audio-item-text: #000000;
+    --audio-item-hover-bg: #777777;
+    --contact-label-color: #614B42;
+    --contact-value-color: #725a4c;
+    --contact-item-bg: #f2ddd7;
+    --contact-paragraph-color: #7a5e50;
+    --dropdown-bg: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --footer-bg: #9CAFAA;
+    --hero-link: rgb(97, 75, 66);
+}
+
+body.dark-mode{
+    --bg-color: #121212;
+    --text-color: #e5e7eb;
+    --navbar-bg: #000000;
+    --link-color: #d1d5db;
+    --link-hover: #ffffff;
+    --hero-hover-color: #d6c7be;
+    --cta-bg: #d0b586; /* ← warna tombol CTA */
+    --cta-hover-bg: #92793f;
+    --about-heading-color: #ffffff;
+    --video-text-color: #ffffff;
+    --about-text-color: #ffffff;
+    --video-heading-color: #94b8de;
+    --hero-heading-color: #98cbdf;
+    --hero-text-color: #ffffff;
+    --audio-title-color: #ffffff;
+    --audio-subtitle-color: #c2e7e5;
+    --audio-item-bg: #d3d7d8;
+    --audio-item-text: #000000;
+    --audio-item-hover-bg: #757373;
+    --contact-label-color: #000000;
+    --contact-value-color: #000000;
+    --contact-item-bg: #c9c9c9;
+    --contact-paragraph-color: #ffffff;
+    --dropdown-bg: #1f2937;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --footer-bg: #787878;
+    --hero-link: #FFFFFF;
+}
+
+body {
+  margin: 0px;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 8%;
+    background-color: var(--navbar-bg);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.logo img {
+  width: 80px;           /* atur ukuran sesuai kebutuhan */
+  height: 80px;          /* pastikan sama agar jadi bulat */
+  border-radius: 50%;    /* ini yang bikin bentuk bulat */
+  object-fit: cover;     /* biar isi gambar pas dan tidak gepeng */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* opsional: efek bayangan */
+}
+
+.logo span {
+  font-size: 1.3rem;         /* ukuran teks */
+  font-family: Unageo;
+  font-weight: 600;          /* ketebalan */
+  color: var(--text-color);  /* pakai warna teks dari variabel */
+  letter-spacing: 1.3px;     /* jarak antar huruf */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  font-family: Poppins Medium;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--link-hover);
+  transition: all 0.3s ease;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-links a:hover {
+  color: var(--link-hover);
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+    background: none;
+    border: none;
+    font-family: Poppins Medium;
+    color: var(--text-color);
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 1rem; /* samakan ukuran dengan .nav-links a */
+    line-height: 1;
+}
+
+.dropdown-content{
+    position: absolute;
+    background-color: var(--dropdown-bg);
+    min-width: 180px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-radius: 10px;
+    overflow: relative;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+}
+
+.dropdown:hover> .dropdown-content{
+    visibility: visible;
+}
+
+.dropdown-content a{
+    padding: 0.75rem 1rem;
+}
+
+.burgerBtn{
+    display: none;
+}
+
+.home-page__hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-image: 
+    url('https://i.pinimg.com/1200x/9e/33/27/9e33276784eb3d75ff97d26ab533a135.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-color);
+  animation: fadeInUp 1.8s ease-out both;
+}
+
+.home-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--shadow-color);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero-content a{
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 8px;
+  color: var(--hero-link);
+}
+
+.hero-content a:hover {
+  color: var(--hero-hover-color);
+  text-decoration: underline;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  letter-spacing: 5px;
+  animation: fadeInUp 1.5s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.hero-content p {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  animation: fadeInUp 1.8s ease-out both;
+  animation-delay: 0.7s;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.3rem;
+  background-color: var(--cta-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI';
+  animation: fadeInUp 2s ease-out both;
+  animation-delay: 1s;
+}
+
+.cta:hover {
+  background-color: var(--cta-hover-bg);
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 5rem 10%;
+  background-color: transparent;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: var(--about-heading-color);
+  margin-bottom: 1.5rem;
+  font-family: Poppins;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--about-text-color);
+  margin-top: 60px;
+  padding: 0;
+  font-family: unageo;
+}
+
+.about-content figure {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.about-content img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px var(--shadow-color);
+}
+
+.video-section {
+  margin-top: 0;
+  background: var(--bg-color);
+  padding: 5rem 10% 0;
+  text-align: center;
+  position: relative;
+  margin-bottom: -1px;
+}
+
+.video-text h2 {
+  font-size: 2rem;
+  color: var(--video-heading-color);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.video-text p {
+  font-size: 1.1rem;
+  color: var(--video-text-color);
+  margin-bottom: 2.5rem;
+}
+
+.video-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px var(--shadow-color);
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 10%;
+  position: relative;
+}
+
+.hero-text {
+  color: var(--video-text-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--hero-heading-color);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--hero-text-color);
+}
+
+.hero-video iframe {
+  width: 100%;
+  height: 315px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.hero:nth-child(even) {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl; /* Balik urutan kolom */
+}
+
+.hero:nth-child(even) .hero-text,
+.hero:nth-child(even) .hero-video {
+  direction: ltr; /* Supaya teksnya tetap normal */
+}
+
+.hero-video {
+  overflow: hidden;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5;
+}
+
+.hero-video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px var(--shadow-color); 
+}
+
+.hero-video iframe {
+  transition: transform 0.3s ease;
+}
+
+.hero-video:hover iframe {
+  transform: scale(1.0);
+}
+
+.audio-section{
+  min-height: 500px;
+}
+
+.audio-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 20px; 
+  padding: 20px;
+}
+
+.audio-title-main{
+  font-size: 2rem;
+  color: var(--audio-title-color);
+  font-family: 'Poppins', sans-serif;
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.audio-subtitle{
+  font-family: unageo;
+  font-size: 18px;
+  color: var(--audio-subtitle-color);
+  margin-top: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.audio-item {
+  background-color: var(--audio-item-bg);
+  border-radius: 16px;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: var(--audio-item-text);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px; 
+  padding: 1.2rem;
+}
+
+.audio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  background-color: var(--audio-item-hover-bg); 
+  transition: all 0.3s ease;
+  cursor: pointer; 
+}
+
+.audio-image {
+  width: 80px; 
+  height: 80px; 
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.5rem; 
+}
+
+.audio-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.audio-info h4 {
+  margin: 0;
+  font-family: unageo;
+  font-size: 1rem;
+  color: var(--audio-item-text);
+}
+
+audio {
+  width: 100%;
+  max-width: 150px;
+  outline: none;  
+}
+
+.contact-section {
+  padding: 2rem 4rem;
+  text-align: center;
+}
+
+.contact-section h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-family: unageo;
+}
+
+.contact-section p {
+  margin-bottom: 2rem;
+  color: var(--contact-paragraph-color);
+  font-family: unageo;
+}
+
+.contact-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.contact-item {
+    background-color: var(--contact-item-bg);
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.contact-item .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-item .label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: var(--contact-label-color);
+}
+
+.contact-item .value {
+  color: var(--contact-value-color);
+  font-size: 0.95rem;
+}
+
+footer{
+  text-align: center;
+  padding: 30px 20px; 
+  font-family: Poppins;
+  font-size: 1.1em;
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+}
+
+/* ====== ANIMASI FADE-IN DARI BAWAH ====== */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ccs alert */
+.modal-content{
+  background-image: url(https://i.pinimg.com/736x/00/e6/fb/00e6fbe4be5e8e7da1b8bb42141d7a64.jpg); 
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  color: var(--contact-label-color);
+  letter-spacing: 3px;
+}
+
+.modal-content p{
+  font-family: Peach cake;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.75); 
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+  transition: opacity 0.5s ease;
+}
+
+#tombol-tutup{
+  padding: 10px 20px;
+  background-color: var(--contact-value-color);
+  color: var(--text-color);
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-family: Poppins SemiBold;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+#tombol-tutup:hover {
+  background-color: var(--contact-paragraph-color)
+}
+
+.video-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.video-modal-content iframe {
+  width: 80vw;
+  height: 45vw;
+  max-width: 800px;
+  max-height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 15;
+  cursor: pointer;
+}
+
+/* ====================== RESPONSIVE DESIGN ====================== */
+
+/* Tablet: di bawah 1024px */
+@media (max-width: 1024px) {
+
+  /* Navbar */
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .logo img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 3rem 8%;
+  }
+
+  .hero-video {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-text {
+    order: 2;
+    width: 100%;
+  }
+
+    .hero:nth-child(even) {
+    direction: ltr;
+  }
+
+  .hero:nth-child(even) .hero-text,
+  .hero:nth-child(even) .hero-video {
+    direction: ltr;
+  }
+
+  .hero-video iframe {
+    height: 320px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    padding: 4rem 8%;
+    gap: 2rem;
+  }
+
+  .video-container iframe {
+    height: 360px;
+  }
+
+  .audio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-info-container {
+    gap: 1rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile: di bawah 768px */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .burgerBtn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 8%;
+    background-color: var(--navbar-bg);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    padding: 1rem 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+  }
+
+  /* Hero Section */
+  .home-page__hero {
+    padding: 5rem 1.5rem;
+    background-position: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta {
+    font-size: 0.95rem;
+  }
+
+  /* About Section */
+  .about-content {
+    padding: 3rem 5%;
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  /* Video Section */
+  .video-container iframe {
+    height: 250px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-text {
+    order: 2;
+  }
+
+  .hero-video {
+    order: 1;
+    width: 100%;
+  }
+
+    .hero:nth-child(even) {
+    direction: ltr;
+  }
+
+  .hero:nth-child(even) .hero-text,
+  .hero:nth-child(even) .hero-video {
+    direction: ltr;
+  }
+
+  /* ukuran video biar pas */
+  .hero-video iframe {
+    height: 240px;
+  }
+
+
+  /* Audio Section */
+  .audio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .audio-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .audio-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .audio-info h4 {
+    font-size: 0.95rem;
+  }
+
+  audio {
+    max-width: 100px;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 1.5rem;
+  }
+
+  .contact-item {
+    min-width: 200px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Phones: di bawah 480px */
+@media (max-width: 480px) {
+  .logo img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .about-text h2,
+  .video-text h2,
+  .audio-title-main {
+    font-size: 1.5rem;
+  }
+
+  .about-text p,
+  .video-text p,
+  .audio-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .audio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audio-item {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .contact-info-container {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .contact-item {
+    width: 100%;
+  }
+
+  footer {
+    font-size: 0.85rem;
+  }
+}
+
+

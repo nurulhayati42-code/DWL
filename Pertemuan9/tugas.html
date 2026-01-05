@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CafeTaste — Cream Café</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* --- Palette: Cream Café --- */
+    :root{
+      --cream: #F6EFE7;
+      --beige: #E4D2BC;
+      --soft-brown: #A67C52;
+      --dark-coffee: #3E332B;
+      --muted-text: #5a4a3e;
+    }
+
+    body{
+      background-color: var(--cream);
+      color: var(--muted-text);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.4;
+    }
+
+    /* Header */
+    .site-header{
+      border-radius: .5rem;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(62,51,43,0.06);
+      background: linear-gradient(180deg, rgba(246,239,231,0.9), rgba(246,239,231,0.9));
+    }
+    .hero-img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-content{
+      padding: 1rem 1.25rem;
+    }
+    .brand-title{
+      color: var(--dark-coffee);
+      font-weight: 700;
+      letter-spacing: .2px;
+      margin: 0;
+    }
+    .brand-sub{
+      color: var(--soft-brown);
+      margin: .25rem 0 0 0;
+      font-size: .95rem;
+    }
+
+    /* Text row (4 columns headings) */
+    .menu-cats .cat-title{
+      font-weight: 600;
+      color: var(--dark-coffee);
+    }
+    .menu-cats .cat-sub{
+      font-size: .9rem;
+      color: #745b4b;
+      margin-top: .25rem;
+    }
+
+    /* Card boxes (plain, equal size) */
+    .kotak-card{
+      border: 1px solid rgba(62,51,43,0.12);
+      border-radius: .5rem;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.65), rgba(255,255,255,0.5));
+      box-shadow: 0 3px 10px rgba(62,51,43,0.03);
+      padding: .75rem;
+      text-align: center;
+    }
+    .kotak-card img{
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+      border-radius: .375rem;
+    }
+    .card-caption{
+      margin-top: .5rem;
+      font-weight: 600;
+      color: var(--dark-coffee);
+    }
+    .card-desc{
+      font-size: .9rem;
+      color: #6a5b4f;
+    }
+
+    /* Footer */
+    .site-footer{
+      background: linear-gradient(180deg, rgba(228,210,188,0.18), rgba(246,239,231,0.0));
+      border-radius: .5rem;
+      padding: 1rem;
+      color: var(--muted-text);
+    }
+    .footer-title{
+      color: var(--dark-coffee);
+      font-weight: 700;
+    }
+
+    /* Spacing helpers */
+    .gap-vert{ margin-top: 1rem; margin-bottom: 1rem; }
+
+    /* Responsive tweaks */
+    @media (max-width: 575.98px){
+      .hero-img{ height: 160px; }
+      .kotak-card{ height: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container py-4">
+
+    <!-- HEADER -->
+    <header class="site-header mb-4">
+      <!-- gunakan file yang kamu upload sebagai header image -->
+      <img class="hero-img" src="/mnt/data/70444AB2-A77C-4DE0-A39A-70E135002743.jpeg" alt="Foto cafe / hero image">
+      <div class="hero-content d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="brand-title h4">CafeTaste — Cream Café</h1>
+          <p class="brand-sub mb-0">Rekomendasi menu café kekinian & cozy</p>
+        </div>
+
+        <!-- tombol CTA kecil -->
+        <div class="d-none d-sm-block">
+          <a class="btn btn-outline-dark btn-sm" href="#menus">Lihat Menu</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- 4 KOLOM TEKS (kategori) -->
+    <section id="menus" class="menu-cats mb-3">
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-3">
+          <div class="cat-title">Coffee & Beverages</div>
+          <div class="cat-sub">Signature espresso & latte</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="cat-title">Pastry & Dessert</div>
+          <div class="cat-sub">Croissant, Cake, Treats</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="cat-title">Brunch Menu</div>
+          <div class="cat-sub">Avocado toast & sandwiches</div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="cat-title">Specialty Dishes</div>
+          <div class="cat-sub">Pasta, Steak & seasonal</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 KOLOM CARD (kotak polos atau gambar) -->
+    <section class="menu-cards mb-4">
+      <div class="row g-3 text-center">
+        <div class="col-6 col-md-3">
+          <div class="kotak-card">
+            <!-- kalau mau pakai gambar, ganti src; kalau tidak, tampilkan teks -->
+            <div>
+              <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=d1a1f6a7c3b4ad3b6c1e0b8a6c6f9f1a" alt="Latte art" />
+              <div class="card-caption">Latte Art</div>
+              <div class="card-desc">Espresso, silky milk</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="kotak-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=85f3b9f0061c3f3f4b7ae2c9a1d17a6b" alt="Pastry" />
+              <div class="card-caption">Croissant & Cake</div>
+              <div class="card-desc">Buttery & flaky pastries</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="kotak-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1604908177522-216d5a7a2c5a?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f6a8b9b7b8f9c6b2a2d1a9c4f5b3d7a" alt="Avocado toast" />
+              <div class="card-caption">Brunch Favorites</div>
+              <div class="card-desc">Avocado toast, fresh bowls</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="kotak-card">
+            <div>
+              <img src="https://images.unsplash.com/photo-1606312611898-7bb5bd3d9c09?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=4a0c8f1f9d1d5b3f8c6b7a8d9e3c2a1b" alt="Pasta dish" />
+              <div class="card-caption">Specialty Dishes</div>
+              <div class="card-desc">Creamy pasta & mains</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (2 KOL) -->
+    <footer class="site-footer">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <div class="footer-title">Alamat</div>
+          <div>Jl. Kopi Latte No. 12<br>Medan, Sumatera Utara</div>
+          <div class="mt-2"><a href="#" class="text-decoration-none" style="color:var(--soft-brown)">Lihat di Google Maps</a></div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div class="footer-title">Kontak & Sosial Media</div>
+          <div>Email: <a href="mailto:cafetaste@gmail.com" class="text-decoration-none" style="color:var(--soft-brown)">cafetaste@gmail.com</a></div>
+          <div>WA: <a href="tel:+6280000000000" class="text-decoration-none" style="color:var(--soft-brown)">08xxxxxxxxxx</a></div>
+          <div class="mt-2">
+            <a href="#" class="text-decoration-none me-2" style="color:var(--soft-brown)">Instagram</a>
+            <a href="#" class="text-decoration-none" style="color:var(--soft-brown)">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Optional: Bootstrap Bundle with Popper (for interactive components if needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+https://i.pinimg.com/1200x/18/7f/f5/187ff551ac91def515b6ef832a42a1c6.jpg / vanilla latte
+https://i.pinimg.com/1200x/c9/f0/14/c9f014e078ff2fa631afdba375d13eb1.jpg / butter croissant
+https://i.pinimg.com/1200x/76/7e/72/767e7238f7f25757469725cc4974445f.jpg / honey toast
+https://i.pinimg.com/736x/af/a9/23/afa92349c0f64281739231e835a1305a.jpg / cinnamon roll

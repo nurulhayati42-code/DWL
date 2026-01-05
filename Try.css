@@ -1,0 +1,330 @@
+*, *::before, *::after {
+    /* Ini MENCEGAH PADDING dan BORDER menambah lebar total elemen. */
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: url(https://i.pinimg.com/1200x/e9/25/e4/e925e468916d3f8a8d336bfb619f03f1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    min-height: 100vh; 
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* hilangkan scroll horizontal */
+}
+
+
+.background span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0, 0 0 40px #00fff0;
+  animation: float 15s linear infinite;
+}
+
+/* Posisi acak */
+.background span:nth-child(1) { top: 20%; left: 10%; animation-duration: 12s; }
+.background span:nth-child(2) { top: 50%; left: 25%; animation-duration: 18s; }
+.background span:nth-child(3) { top: 70%; left: 80%; animation-duration: 20s; }
+.background span:nth-child(4) { top: 30%; left: 70%; animation-duration: 15s; }
+.background span:nth-child(5) { top: 85%; left: 50%; animation-duration: 25s; }
+.background span:nth-child(6) { top: 10%; left: 90%; animation-duration: 17s; }
+.background span:nth-child(7) { top: 60%; left: 40%; animation-duration: 22s; }
+.background span:nth-child(8) { top: 45%; left: 15%; animation-duration: 16s; }
+.background span:nth-child(9) { top: 75%; left: 5%; animation-duration: 26s; }
+.background span:nth-child(10){ top: 15%; left: 60%; animation-duration: 19s; }
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1); opacity: 1; }
+  50%  { transform: translateY(-100px) scale(1.3); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+header{
+    color: aliceblue;
+    font-family: Unageo;
+    text-align: center;
+}
+
+
+h4{
+    font-size: 20px;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(270deg, #66ccff, #cc99ff, #66ccff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientFlow 4s ease infinite;
+
+  /* Neon glow yang lebih halus */
+  text-shadow:
+    0 0 5px rgba(204, 153, 255, 0.7),
+    0 0 10px rgba(102, 204, 255, 0.5),
+    0 0 20px rgba(102, 204, 255, 0.3);
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.Produktif{
+    font-size: 30px;
+    font-weight: bold;
+    background: linear-gradient(270deg, #ff9a00, #ff6ec7); /* contoh oranye → pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.normal{
+    font-size: 20px;
+    color: aliceblue
+}
+
+nav {
+    font-family: unageo;
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;   /* posisikan link di tengah */
+    gap: 100px;                 /* jarak antar link */
+    background: rgba(255, 255, 255, 0.1); /* warna background bar (bisa diganti gradient) */
+    padding: 20px 0;           /* tinggi bar */
+    position: relative;
+    width: 100%;               /* full kiri ke kanan */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    transform: perspective(500px) translateZ(0); /* baseline 3D */
+    background: rgba(255, 255, 255, 0.1); /* transparan untuk blur */
+    backdrop-filter: blur(10px); /* blur di belakang elemen */
+    box-shadow: 0 0 15px rgba(13, 66, 109, 0.929);
+}
+
+nav a:hover {
+    background: linear-gradient(90deg, #66ccff, #cc99ff);
+    color: black;
+    box-shadow: 0 0 20px rgba(102, 204, 255, 0.7);
+    transform: perspective(500px) translateZ(20px); /* maju ke depan */
+}
+
+nav a:active {
+    transform: perspective(500px) translateZ(10px) scale(0.97); /* sedikit masuk saat ditekan */
+    box-shadow: 0 0 12px rgba(102, 204, 255, 0.6);
+}
+
+/* --- Style untuk Profile Card (Versi 2: Nama di Bawah Foto) --- */
+.profile-card-v2 {
+    max-width: 1280px;
+    margin: 80px auto 40px auto;
+    padding: 35px;
+    
+    display: flex; /* Flexbox untuk membagi area Kiri dan Kanan */
+    align-items: center; /* Elemen dimulai dari atas */
+    gap: 40px; 
+    
+    /* Efek Futuristik */
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(102, 204, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 
+        0 0 15px rgba(102, 204, 255, 0.5), 
+        0 0 30px rgba(204, 153, 255, 0.2);
+}
+
+/* --- Kolom Kiri: Foto dan Nama (Dalam Satu Border Visual) --- */
+.profile-visual {
+    flex: 0 0 250px; /* Lebar tetap 250px */
+    padding: 20px 10px;
+    text-align: center;
+  
+}
+
+.profile-photo-v2 {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%; /* Lingkaran Sempurna */
+    object-fit: cover; 
+    margin-bottom: 15px;
+    
+    /* Neon Border Foto */
+    border: 3px solid #66ccff; 
+    box-shadow: 0 0 15px #66ccff;
+}
+
+.profile-name-v2 h2 {
+    font-family: Unageo, sans-serif;
+    font-size: 24px;
+    margin: 0;
+    color: #ff9a00; /* Warna Nama */
+    text-shadow: 0 0 8px rgba(255, 154, 0, 0.8);
+}
+
+.profile-name-v2 .role-text-v2 {
+    font-family: Unageo, sans-serif;
+    font-size: 14px;
+    color: #cc99ff; 
+    margin-top: 5px;
+}
+
+/* --- Kolom Kanan: Bio Teks --- */
+.profile-bio-v2 {
+    flex-grow: 1; /* Mengisi sisa ruang */
+    padding-left: 20px;
+}
+
+.profile-bio-v2 .bio-title {
+    font-family: Unageo, sans-serif;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #66ccff; /* Warna judul bio */
+}
+
+.profile-bio-v2 p {
+    font-family: unageo, sans-serif;
+    font-size: 19px;
+    color: aliceblue;
+    line-height: 1.8;
+    text-shadow: 0 0 4px rgba(225, 225, 225, 0.5);
+    margin: 0;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.profile-bio-v2 p b{
+  color: #ff9a00;
+  text-shadow: 0 0 8px rgba(255, 154, 0, 0.3); 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom per baris */
+  gap: 30px; /* jarak antar kotak */
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.grid-container div {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px; /* jarak iframe dengan border */
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease; box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(14, 107, 170, 0.919);
+}
+
+.grid-container div iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* efek hover */
+.grid-container div:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #87c1df;
+}
+
+.video-caption {
+  color: aliceblue;
+  font-family: Unageo;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0); 
+}
+
+.video-caption b {
+  /* Ganti warna menjadi Biru Neon agar menonjol dari deskripsi */
+  color: #28b3f4; /* Warna biru muda/cyan */
+  text-shadow: 0 0 5px #28b3f4, 0 0 10px rgba(40, 179, 244, 0.5); 
+}
+
+
+/* Responsif untuk layar kecil */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom per baris */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 kolom per baris */
+  }
+}
+
+footer {
+    /* --- HILANGKAN 100vw & calc() --- */
+    
+    /* LEBAR DAN MARGIN */
+    display: block;
+    width: 100%; /* Kembali ke lebar normal 100% */
+    margin: 80px auto 0 auto; /* Margin-top 80px, kiri/kanan otomatis, bawah 0 */
+    
+    /* STYLING LAINNYA (Teks di tengah, Padding, dll.) */
+    text-align: center;
+    padding: 30px 0; /* Ubah padding horizontal menjadi 0 */
+    
+    /* ... styling lainnya (glow, background, border-top) ... */
+    color: #00fff0; 
+    font-family: Poppins;
+    font-size: 1.1em; 
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(8px);
+    
+    border-top: 2px solid #00fff0; 
+    
+    text-shadow: 
+        0 0 5px rgba(0, 255, 240, 0.8), 
+        0 0 10px rgba(0, 255, 240, 0.4); 
+    box-shadow: 0 -5px 20px rgba(0, 255, 240, 0.2);
+    clear: both;
+}
+
+
+#home, #about, #contact {
+    /* Menambahkan jarak di atas target agar tidak tertutup nav bar */
+    padding-top: 150px; 
+    /* Mengimbangi padding agar posisi konten tidak bergeser */
+    margin-top: -150px; 
+}
+
+
+
+
+
+

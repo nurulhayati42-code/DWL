@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #0f0c29;
+  color: #e0e0e0;
+  text-align: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ==== ANIMASI LATAR BELAKANG NEON ==== */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+}
+
+.background span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 255, 240, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00fff0, 0 0 20px #00fff0, 0 0 40px #00fff0;
+  animation: float 15s linear infinite;
+}
+
+/* Posisi acak */
+.background span:nth-child(1) { top: 20%; left: 10%; animation-duration: 12s; }
+.background span:nth-child(2) { top: 50%; left: 25%; animation-duration: 18s; }
+.background span:nth-child(3) { top: 70%; left: 80%; animation-duration: 20s; }
+.background span:nth-child(4) { top: 30%; left: 70%; animation-duration: 15s; }
+.background span:nth-child(5) { top: 85%; left: 50%; animation-duration: 25s; }
+.background span:nth-child(6) { top: 10%; left: 90%; animation-duration: 17s; }
+.background span:nth-child(7) { top: 60%; left: 40%; animation-duration: 22s; }
+.background span:nth-child(8) { top: 45%; left: 15%; animation-duration: 16s; }
+.background span:nth-child(9) { top: 75%; left: 5%; animation-duration: 26s; }
+.background span:nth-child(10){ top: 15%; left: 60%; animation-duration: 19s; }
+
+@keyframes float {
+  0%   { transform: translateY(0) scale(1); opacity: 1; }
+  50%  { transform: translateY(-100px) scale(1.3); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ==== KONTEN ==== */
+header {
+  padding: 2rem 1rem;
+  color: #00fff0;
+  text-shadow: 0 0 10px #00fff0;
+}
+
+/* --- Style untuk Kata Pengantar Motivasi Baru --- */
+.intro-motivation {
+    /* Wadah utama */
+    max-width: 950px; /* Lebar lebih luas agar teks mengalir */
+    margin: 80px auto 40px auto; /* Jarak dari nav dan grid */
+    padding: 35px 40px;
+    
+    /* Efek Futuristik */
+    background: rgba(255, 255, 255, 0.08); /* Latar belakang sedikit lebih solid */
+    backdrop-filter: blur(12px); /* Efek blur yang kuat */
+    border: 1px solid rgba(204, 153, 255, 0.4); /* Border ungu lembut */
+    border-radius: 18px;
+    
+    /* Neon Glow pada Kotak - Menarik Perhatian */
+    box-shadow: 
+        0 0 18px rgba(204, 153, 255, 0.6), /* Glow ungu yang lebih menonjol */
+        0 0 35px rgba(102, 204, 255, 0.15); /* Glow biru sebagai lapisan kedua */
+    
+    text-align: center;
+}
+
+.intro-motivation p {
+    /* Isi Paragraf */
+    font-family: Unageo, sans-serif;
+    font-size: 19px;
+    color: aliceblue;
+    line-height: 1.8;
+    
+    /* Sentuhan Neon pada Teks Penting */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5); 
+}
+
+/* Penekanan untuk kata kunci yang sudah di-bold dalam HTML */
+.intro-motivation p b {
+    color: #ff9a00; /* Menggunakan warna oranye/kreatif */
+    text-shadow: 0 0 8px rgba(255, 154, 0, 0.8); /* Glow oranye */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.grid-container > * {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 240, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 240, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+}
+
+.grid-container > *:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00fff0;
+  border-color: #00fff0;
+}
+
+/* Warna khusus tiap bagian */
+.item1 { border-color: #ff00c8; box-shadow: 0 0 15px #ff00c8; }
+.item2 { border-color: #00fff0; box-shadow: 0 0 15px #00fff0; }
+.item3 { border-color: #00ff6a; box-shadow: 0 0 15px #00ff6a; }
+.item4 { border-color: #ffae00; box-shadow: 0 0 15px #ffae00; }
+.item5 { border-color: #c800ff; box-shadow: 0 0 15px #c800ff; }
+.item6 { border-color: #00b3ff; box-shadow: 0 0 15px #00b3ff; }
+
+video, img, audio {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+#contact {
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 700px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 240, 0.2);
+}
+
+.contact-container h2 {
+  color: #00fff0;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(0, 255, 240, 0.6);
+}
+
+.contact-container p {
+  margin-bottom: 40px;
+  color: #d0f0ff;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px rgba(0, 255, 240, 0.2);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b8faff;
+}
+
+.contact-btn {
+  margin-top: 10px;
+  padding: 12px 30px;
+  background: linear-gradient(90deg, #00fff0, #00aaff);
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: linear-gradient(90deg, #00aaff, #00fff0);
+  transform: scale(1.05);
+}
+
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links a {
+  color: #00fff0;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00fff0;
+}
+
+footer {
+    /* PENAMPILAN DASAR */
+    text-align: center;
+    padding: 30px 20px; /* Padding lebih tebal */
+    color: #00fff0; /* Ubah warna teks menjadi warna neon/glow Anda */
+    font-family: Poppins;
+    font-size: 1.1em; /* Sedikit lebih besar */
+    
+    /* BACKGROUND FUTURISTIK (Gradien Transparan + Blur) */
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+    backdrop-filter: blur(8px); /* Efek blur yang lebih kuat */
+
+    /* BORDER DAN GLOW */
+    border-top: 2px solid #00fff0; /* Border neon yang lebih tebal */
+    margin-top: 80px; /* Jarak atas lebih jauh */
+    
+    /* EFEK NEON TEXT GLOW */
+    text-shadow: 
+        0 0 5px rgba(0, 255, 240, 0.8), /* Glow pertama (warna cyan) */
+        0 0 10px rgba(0, 255, 240, 0.4); /* Glow kedua */
+    
+    /* EFEK BOX SHADOW (Optional: untuk menambah kedalaman) */
+    box-shadow: 0 -5px 20px rgba(0, 255, 240, 0.2);
+}

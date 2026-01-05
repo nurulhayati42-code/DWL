@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma.id</title>
+  <link rel="stylesheet" href="uts.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">AROMA.ID</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Produk</a>
+      <a href="#">Tentang</a>
+      <a href="#">Kontak</a>
+    </nav>
+    <div class="icons">
+      <span id="themeToggle" class="theme-icon">🌙</span>
+      <span class="cart-icon" id="cartBtn">🛒</span>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Temukan Aroma yang Mewakili Dirimu</h1>
+    <button class="btn-primary">Belanja Sekarang</button>
+  </section>
+
+  <!-- Produk -->
+  <section class="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="produk-container">
+      <div class="produk-card">
+        <img src="jam/Seahorse Queen of Castor.jpg" alt="Seahorse Queen of Castor">
+        <h3>Seahorse Queen of Castor</h3>
+        <p>Rp 597.080</p>
+        <button class="btn-cart" data-name="Seahorse Queen of Castor" data-price="597080">Tambah ke Keranjang</button>
+      </div>
+      <div class="produk-card">
+        <img src="jam/Pearl Front.jpg" alt="Solitaire of gold Pinky Pearl">
+        <h3>Solitaire of Gold Pinky Pearl</h3>
+        <p>Rp 585.000</p>
+        <button class="btn-cart" data-name="Solitaire of Pinky Pearl" data-price="585000">Tambah ke Keranjang</button>
+      </div>
+      <div class="produk-card">
+        <img src="jam/Romans King of Legatus.jpg" alt="Romans King of Legatus">
+        <h3>Romans King of Legatus</h3>
+        <p>Rp 702.210</p>
+        <button class="btn-cart" data-name="Romans King of Legatus" data-price="702210">Tambah ke Keranjang</button>
+      </div>
+      <div class="produk-card">
+        <img src="jam/Butter Cake Front.jpg" alt="Green Butter Cake Front">
+        <h3>Green Butter Cake Front</h3>
+        <p>Rp 479.700</p>
+        <button class="btn-cart" data-name="Green Butter Cake Front" data-price="479700">Tambah ke Keranjang</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section class="tentang">
+    <h2>Tentang Kami</h2>
+    <p>Aroma.id menghadirkan parfum terbaik untuk pria dan wanita yang ingin tampil percaya diri sepanjang hari.</p>
+    <div class="testimoni">
+      <div class="testi-card">
+        <p>"Parfumnya tahan lama banget!"</p>
+        <span>- Rina</span>
+      </div>
+      <div class="testi-card">
+        <p>"Aromanya elegan dan segar."</p>
+        <span>- Andi</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Aroma.id</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">WhatsApp</a>
+      <a href="#">Email</a>
+    </div>
+  </footer>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <p>Produk ditambahkan ke keranjang!</p>
+      <button id="okBtn">OK</button>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+      <h3>Keranjang Belanja</h3>
+      <ul id="cartItems"></ul>
+      <p id="totalPrice"></p>
+      <button id="closeCart">Tutup</button>
+    </div>
+  </div>
+
+  <script src="uts.js"></script>
+</body>
+</html>

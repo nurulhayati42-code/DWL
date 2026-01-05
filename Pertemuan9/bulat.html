@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!--Panggil css dan bootstrap-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --white: #efeae5;
+        --cream: #fcf4ec;
+        --soft-brown: #95745d;
+        --caramel: #d9b6a3;
+        --coffee: #8a6f58;
+        --mocha: #4a3f35;
+        --warm-grey: #dcd4ca;
+        --footer: #a8957ea1;
+
+        --font-title: "Playfair Display", serif;
+        --font-body: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: var(--white);
+        font-family: var(--font-body);
+        color: var(--mocha);
+      }
+
+      h1,
+      h2,
+      h3,
+      .footer-title {
+        font-family: var(--font-title);
+        color: var(--coffee);
+      }
+
+      .card {
+        border: none;
+        border-radius: 15px;
+        background-color: #fff;
+      }
+
+      /* Hover Card Effect */
+      .card {
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(217, 182, 163, 0.4);
+      }
+
+      .card-title {
+        color: var(--coffee);
+        font-weight: 600;
+      }
+
+      .site-footer {
+        background-color: var(--footer);
+        padding: 40px 0;
+      }
+
+      .site-footer a {
+        color: var(--soft-brown);
+      }
+
+      /* Social Media Hover */
+      .social-icon {
+        font-size: 30px;
+        transition: transform 0.3s ease, color 0.3s ease;
+        color: var(--coffee);
+      }
+
+      .social-wrap:hover .social-icon {
+        transform: scale(1.18);
+        color: var(--soft-brown);
+      }
+
+      .social-label {
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-wrap:hover .social-label {
+        color: var(--coffee);
+        transform: translateY(2px);
+      }
+
+      .cat-title {
+        color: var(--coffee);
+        font-size: 1.1rem;
+      }
+
+      .cat-sub {
+        color: var(--mocha);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bagian gambar full-width -->
+ <!-- Hero Logo Bulat -->
+<div class="container text-center my-5">
+    <img src="https://i.pinimg.com/736x/38/08/af/3808afce579d1d935098cac8009788f8.jpg" 
+         class="rounded-circle mx-auto d-block" 
+         style="width: 300px; height: 300px; object-fit: cover;" 
+         alt="CreamNest Logo">
+</div>
+
+
+    <!-- Bagian judul tetap rapi -->
+    <div class="container text-center mt-4">
+      <h1 class="display-1">CreamNest Café</h1>
+    </div>
+
+    <!-- 4 Highlight Café -->
+    <section class="menu-cats mb-5" style="margin-top: 80px">
+      <div
+        class="container-fluid"
+        style="max-width: 1300px; padding-left: 20px; padding-right: 20px"
+      >
+        <div class="row text-center">
+          <div class="col-6 col-md-3 mb-4">
+            <div class="cat-title fw-bold mb-2">🏡 Cozy & Calm Space</div>
+            <div class="cat-sub text-justify">
+              Ruang yang dirancang dengan nuansa cream dan warm lighting,
+              menciptakan suasana tenang yang cocok untuk belajar, bekerja, atau
+              sekadar menikmati waktu sendiri. Setiap sudut dibuat nyaman agar
+              pengunjung merasa betah berlama-lama.
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="cat-title fw-bold mb-2">☕ Fresh Brew Coffee</div>
+            <div class="cat-sub text-justify">
+              Setiap cangkir kopi diseduh dari biji pilihan yang baru digiling,
+              memastikan aroma dan rasa yang lebih kaya. Kami menggunakan metode
+              brewing yang konsisten untuk memberikan pengalaman menikmati kopi
+              terbaik setiap harinya.
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="cat-title fw-bold mb-2">🥐 Daily Fresh Pastry</div>
+            <div class="cat-sub text-justify">
+              Semua pastry dibuat dan dipanggang setiap pagi agar selalu fresh,
+              lembut, dan buttery. Mulai dari croissant, cinnamon roll, hingga
+              berbagai dessert manis, semuanya dipersiapkan dengan bahan
+              berkualitas.
+            </div>
+          </div>
+
+          <div class="col-6 col-md-3 mb-4">
+            <div class="cat-title fw-bold mb-2">😊 Friendly Service</div>
+            <div class="cat-sub text-justify">
+              Para barista dan staff kami selalu siap memberikan pelayanan ramah
+              dan membantu apa pun kebutuhan pengunjung. Suasana café yang
+              hangat membuatnya cocok untuk meeting ringan, kerja santai, maupun
+              hangout bersama teman.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Judul Menu (Bootstrap Only) -->
+    <div class="container text-center my-5">
+      <h2 class="fw-bold display-6">Freshly Made For You</h2>
+    </div>
+
+    <!-- 4 KOLOM CARD MENU -->
+    <section class="menu-cards mb-4">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Vanilla Latte -->
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://i.pinimg.com/1200x/18/7f/f5/187ff551ac91def515b6ef832a42a1c6.jpg"
+                class="card-img-top img-fixed"
+                alt="Vanilla Latte"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Vanilla Latte</h5>
+                <p class="card-text small">Signature sweet & creamy blend.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Butter Croissant -->
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://i.pinimg.com/1200x/c9/f0/14/c9f014e078ff2fa631afdba375d13eb1.jpg"
+                class="card-img-top img-fixed"
+                alt="Butter Croissant"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Butter Croissant</h5>
+                <p class="card-text small">Flaky, buttery & freshly baked.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Honey Toast -->
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://i.pinimg.com/1200x/76/7e/72/767e7238f7f25757469725cc4974445f.jpg"
+                class="card-img-top img-fixed"
+                alt="Honey Toast"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Honey Toast</h5>
+                <p class="card-text small">Sweet toast with soft texture.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cinnamon Roll -->
+          <div class="col-6 col-md-3">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="https://i.pinimg.com/1200x/1c/fa/18/1cfa18d7ad118d66ba35daf35518bf30.jpg"
+                class="card-img-top img-fixed"
+                alt="Cinnamon Roll"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Cinnamon Roll</h5>
+                <p class="card-text small">Warm, soft & cinnamon glazed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (CreamNest Café) -->
+    <footer class="site-footer mt-5 py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Kolom Kiri -->
+          <div class="col-md-6 mb-4">
+            <h4 class="fw-bold mb-2" style="color: var(--coffee)">
+              CreamNest Café
+            </h4>
+
+            <p class="mb-2">
+              Jl. KH Agus Salim, Teladan<br />
+              Kisaran, Sumatera Utara<br />
+              Indonesia
+            </p>
+
+            <a
+              href="#"
+              class="text-decoration-none"
+              style="color: var(--soft-brown)"
+            >
+              ➤ Lihat di Google Maps
+            </a>
+
+            <div class="mt-3">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13758.723595934825!2d99.60668533533996!3d2.978982280799778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3032490012ba22a3%3A0xf63344007247b762!2sTrend%E2%80%99Z%20Coffee%20Cafe%20Kisaran!5e1!3m2!1sid!2sid!4v1763885484337!5m2!1sid!2sid"
+                width="90%"
+                height="260"
+                style="border: 0; border-radius: 12px"
+                allowfullscreen
+                loading="lazy"
+              >
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan -->
+          <div class="col-md-6 mb-4">
+            <h4 class="fw-bold mb-2" style="color: var(--coffee)">
+              Kontak & Sosial Media
+            </h4>
+
+            <p class="mb-2">
+              Email:
+              <a
+                href="mailto:creamnestcafe@gmail.com"
+                class="text-decoration-none"
+                style="color: var(--soft-brown)"
+              >
+                creamnestcafe@gmail.com </a
+              ><br />
+
+              WhatsApp:
+              <a
+                href="tel:+62882017919450"
+                class="text-decoration-none"
+                style="color: var(--soft-brown)"
+              >
+                0882017919450
+              </a>
+            </p>
+
+            <!-- IKON MEDSOS -->
+            <div class="d-flex align-items-center gap-4 mt-4">
+              <div class="text-center social-wrap" style="cursor: pointer">
+                <i
+                  class="bi bi-instagram social-icon fs-3"
+                  style="color: var(--soft-brown)"
+                ></i>
+                <div class="social-label small mt-1">@creamnest.cafe</div>
+              </div>
+
+              <div class="text-center social-wrap" style="cursor: pointer">
+                <i
+                  class="bi bi-tiktok social-icon fs-3"
+                  style="color: var(--soft-brown)"
+                ></i>
+                <div class="social-label small mt-1">@creamnest.cafe</div>
+              </div>
+
+              <div class="text-center social-wrap" style="cursor: pointer">
+                <i
+                  class="bi bi-facebook social-icon fs-3"
+                  style="color: var(--soft-brown)"
+                ></i>
+                <div class="social-label small mt-1">CreamNest Cafe</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

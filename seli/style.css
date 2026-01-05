@@ -1,0 +1,589 @@
+/* daftarkan warna dalam variabel */
+:root {
+    --bg-color: #fdf6f6;
+    --text-color: #1f2937;
+    --navbar-bg: #696464;
+    --link-color: darkolivegreen;
+    --link-hover: palevioletred;
+    --dropdown-bg: #9b9696;
+    --hero-color: #706d6d;
+    --footer-bag: #86867d;
+    --card-bag: #eed7d7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* warna body dark-mode */
+body.dark-mode {
+    --bg-color: #2e2e2e;
+    --text-color: #e5e7eb;
+    --navbar-bg: #1f2937;
+    --link-color: #556b2f;
+    --link-hover: #d87093;
+    --dropdown-bg: #1f2937;
+    --hero-color: #fff;
+    --shadow-color: rgba(225, 225, 225, 0.1);
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--navbar-bg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.burger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.show {
+    display: block;
+    background-color: var(--navbar-bg);
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+/* <-- HAPUS TANDA KURAWAL BERLEBIHAN DI SINI */
+header a:hover{
+    color: rgb(155, 155, 152);
+}
+
+header h1{
+    color: rgb(209, 207, 209);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ccs alert */
+.modal-content{
+    background-color: rgb(179, 155, 91);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.hidden{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5 ease;
+    color: black;
+
+}
+
+#tombol-tutup{
+    padding: 15px 10px;
+    background-color: rgb(197, 177, 112);
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.hero{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.hero-text h2{
+    font-size: 2.2rem;
+    color: #222;
+}
+
+.hero p{
+    margin-top: 1rem;
+    color: #646363;
+}
+
+.hero-image img{
+    border-radius: 20p0x;
+    height: 500px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #d4a574;
+}
+
+/* MENU SECTION */
+.menu-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.menu-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.menu-item img:hover {
+  transform: scale(1.05);
+}
+
+.menu-item p {
+  margin-top: 10px;
+  font-weight: 500;
+  background-color: #c0b052;
+}
+
+/* Styling untuk gambar di dalam modal */
+#modalImg {
+  display: block; /* Agar dapat diatur margin dan ukurannya */
+  max-width: 90%; /* Batas ukuran gambar maksimal */
+  max-height: 90vh; /* Batas tinggi maksimal (90% dari viewport height) */
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  
+  /* Tambahkan border kuning di sekitar gambar pop-up */
+  border: 10px solid #c0b052; 
+}
+
+.video-gallery{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+/* Responsif video popup & card */
+@media (max-width: 768px) {
+  .video-gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  #videoPopupModal .modal-content-wrapper {
+    width: 95%;
+    max-width: 600px;
+  }
+}
+
+
+.card{
+    background-color: #c0b052;
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    height: 400px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #444;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s;
+}
+
+.card:hover{
+    box-shadow: 0 4px 20px rgba(192, 212, 137, 0.1);
+    transform: translateY(-5px);
+}
+
+.card h3{
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #6b4fc8;
+}
+
+.card iframe{
+    width: 100%;
+    outline: none;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+/* Mengatur gambar di dalam kartu video */
+.card img {
+    /* Tinggi yang diseragamkan agar semua gambar sejajar */
+    height: 300px; 
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px; /* Sesuaikan margin agar terlihat rapi */
+    margin-bottom: 10px;
+}
+
+/* === Modal (Pastikan properti flex untuk centering) === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center; /* Untuk centering horizontal */
+  align-items: center;   /* Untuk centering vertical */
+}
+
+/* ===== Popup Video Styling ===== */
+#videoPopupModal {
+  display: none; /* disembunyikan dulu */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* layar gelap transparan */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* style.css (di bagian Popup Video Styling) */
+
+#videoPopupModal .modal-content-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  /* PERBAIKAN KRITIS: Hapus tinggi, ganti dengan rasio 16:9 */
+  height: 0; /* Kunci: Atur tinggi ke nol */
+  padding-bottom: 56.25%; /* Kunci: Ini adalah 9/16, untuk rasio 16:9 */
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#popupVideoFrame {
+  /* PERBAIKAN: Gunakan posisi absolut untuk mengisi wrapper 16:9 */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  border: none;
+  border-radius: 10px;
+}
+
+#videoPopupModal .close-video {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* Sembunyikan salah satu modal konten secara default */
+#modalImg, #modalVideo {
+  display: none;
+}
+
+*{
+    box-sizing: bonder-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* TAMBAHKAN: Media query untuk layar yang sangat kecil jika perlu */
+@media (max-width: 450px) {
+    .card {
+        width: 100%; /* Kartu mengambil lebar penuh pada layar sangat sempit */
+        max-width: 300px; /* Batasi lebar agar tidak terlalu lebar di tablet */
+    }
+}
+
+/* Audio */
+.hover-audio {
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  margin-top: 8px;
+}
+
+/* Saat di-hover audio muncul */
+.video-card:hover .hover-audio {
+  opacity: 1;
+}
+
+/* Efek lembut pada tombol audio */
+audio::-webkit-media-controls-panel {
+  background-color: #f5e3c3;
+  border-radius: 8px;
+}
+audio {
+  width: 90%;
+  margin-top: 10px;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  background-color: #f3ede2;
+  color: #fff;
+  padding: 60px 40px;
+  background-image: url(https://thumbs.dreamstime.com/b/illustration-horizontal-banner-bakery-frame-assortment-products-wheat-ears-dark-wooden-background-copy-space-free-347542448.jpg);
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-container img {
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.about-text {
+  max-width: 500px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+
+.sosial,
+.kontak {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+  color: #222222;
+}
+
+.sosial {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ikon sosial media */
+.ikon-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.ikon-container img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #f1ecec;
+  object-fit: cover;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 1px solid #fcf8f8cc;
+}
+
+.bulat {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #ccc;
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+footer {
+    padding: 16px;
+    color: #fff;
+    background-image: url(https://st3.depositphotos.com/1943809/36064/i/1600/depositphotos_360647718-stock-photo-vintage-light-brown-colored-damaged.jpg);
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: auto;
+}
+
+.bulat-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.bulat {
+  width: 60px;
+  height: 60px;
+  background: #CCC333;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.kotak {
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+}
+
+/* style.css: Tambahkan di akhir file */
+
+/* Sembunyikan tombol burger dan atur nav links secara default */
+.burger {
+    display: none; 
+}
+
+/* Tampilan Desktop (Lebar > 768px) */
+nav {
+    display: block; /* Pastikan nav terlihat di desktop */
+}
+
+/* Tampilan Mobile (Lebar <= 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    /* Tampilkan tombol burger di mobile */
+    .burger {
+        display: block; 
+    }
+
+    /* Sembunyikan navigasi secara default */
+    nav {
+        order: 1; /* Pindahkan nav ke bawah logo */
+        flex-basis: 100%; /* Ambil lebar penuh */
+        display: none; /* Sembunyikan */
+    }
+
+    /* Tampilkan navigasi ketika class 'show' aktif (dari JS) */
+    #navLinks.show {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column; /* Link vertikal */
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}

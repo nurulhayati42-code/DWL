@@ -1,0 +1,202 @@
+/* Warna dasar untuk LIGHT MODE */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-bg: #ffffff;
+  --accent-color: #f97316;
+  --header-bg: #ffffff;
+  --footer-bg: #111111;
+  --hero-text: #000000;
+  --section-bg: #f9f9f9;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Warna untuk DARK MODE */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --card-bg: #1e1e1e;
+  --accent-color: #f97316;
+  --header-bg: #1b1b1b;
+  --footer-bg: #000000;
+  --hero-text: #ffffff;
+  --section-bg: #1a1a1a;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: var(--header-bg);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: background 0.3s;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-icon, .cart-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Hero */
+.hero {
+  background: url('https://via.placeholder.com/1200x500?text=Parfum+Hero') center/cover no-repeat;
+  color: var(--hero-text);
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Produk */
+.produk {
+  padding: 50px 20px;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+.produk-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.produk-card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow);
+  padding: 20px;
+  width: 230px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.produk-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.btn-cart {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Tentang Kami */
+.tentang {
+  background: var(--section-bg);
+  padding: 50px 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.testimoni {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.testi-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* Footer */
+footer {
+  background: var(--footer-bg);
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer .socials a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Cart Modal */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  color: var(--text-color);
+}
